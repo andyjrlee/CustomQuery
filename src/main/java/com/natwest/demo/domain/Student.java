@@ -18,11 +18,7 @@ public class Student {
 	
 	private String First_Name;
 	private String Last_Name;
-	
-	@NotNull
 	private int Age;
-	
-	@Email
 	private String Email;
 
 	public Student() {
@@ -56,35 +52,35 @@ public class Student {
 		this.id = id;
 	}
 
-	private String getFirst_Name() {
+	public String getFirst_Name() {
 		return First_Name;
 	}
 
-	private void setFirst_Name(String first_Name) {
+	public void setFirst_Name(String first_Name) {
 		First_Name = first_Name;
 	}
 
-	private String getLast_Name() {
+	public String getLast_Name() {
 		return Last_Name;
 	}
 
-	private void setLast_Name(String last_Name) {
+	public void setLast_Name(String last_Name) {
 		Last_Name = last_Name;
 	}
 
-	private int getAge() {
+	public int getAge() {
 		return Age;
 	}
 
-	private void setAge(int age) {
+	public void setAge(int age) {
 		Age = age;
 	}
 
-	private String getEmail() {
+	public String getEmail() {
 		return Email;
 	}
 
-	private void setEmail(String email) {
+	public void setEmail(String email) {
 		Email = email;
 	}
 
