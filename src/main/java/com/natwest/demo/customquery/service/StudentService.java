@@ -1,4 +1,4 @@
-package com.natwest.demo.service;
+package com.natwest.demo.customquery.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.natwest.demo.domain.Student;
-import com.natwest.demo.repo.StudentRepo;
+import com.natwest.demo.customquery.domain.Student;
+import com.natwest.demo.customquery.repo.StudentRepo;
 
 @Service
 public class StudentService {
@@ -43,8 +43,8 @@ public class StudentService {
 	public Student update(Long id, Student student) {
 		// First_Name, Last_Name, Age, Email
 		Student existing = this.repo.getById(id);
-		existing.setFirst_Name(student.getFirst_Name());
-		existing.setLast_Name(student.getLast_Name());
+		existing.setFirstName(student.getFirstName());
+		existing.setLastName(student.getLastName());
 		existing.setEmail(student.getEmail());
 		existing.setAge(student.getAge());
 		Student updated = this.repo.save(existing);
@@ -58,6 +58,7 @@ public class StudentService {
 		return this.repo.existsById(id);
 	}
 
+	// Find by name
 	public List<Student> readByName(String name) { 
 		return this.repo.findByName(name);
 	}

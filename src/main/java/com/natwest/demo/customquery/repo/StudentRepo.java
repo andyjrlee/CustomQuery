@@ -1,4 +1,4 @@
-package com.natwest.demo.repo;
+package com.natwest.demo.customquery.repo;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.natwest.demo.domain.Student;
+import com.natwest.demo.customquery.domain.Student;
 
 @Repository
 public interface StudentRepo extends JpaRepository<Student, Long> {
@@ -17,7 +17,7 @@ public interface StudentRepo extends JpaRepository<Student, Long> {
 		@Query(value = "SELECT * FROM Student WHERE first_name =?1", nativeQuery = true)
 	List<Student> findByName(String name);
 	
-	
+
 	
 	
 }

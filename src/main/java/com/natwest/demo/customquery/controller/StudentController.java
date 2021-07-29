@@ -1,4 +1,4 @@
-package com.natwest.demo.controller;
+package com.natwest.demo.customquery.controller;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.natwest.demo.domain.Student;
-import com.natwest.demo.service.StudentService;
+import com.natwest.demo.customquery.domain.Student;
+import com.natwest.demo.customquery.service.StudentService;
 
 @RestController // Handles our requests/responses
-@RequestMapping("/student") // http://localhost:8080/student/..
+@RequestMapping("/student") // http://localhost:9002/student/..
 public class StudentController {
 
 	@Autowired
@@ -62,7 +62,7 @@ public class StudentController {
 	
 	// Find by name
 	@GetMapping("/readName/{name}")
-	public ResponseEntity<List<Student>> readByName(@PathVariable String name){
+	public ResponseEntity<List<Student>> findByName(@PathVariable String name){
 		return new ResponseEntity<List<Student>>(this.service.readByName(name), HttpStatus.OK);
 	}
 }
